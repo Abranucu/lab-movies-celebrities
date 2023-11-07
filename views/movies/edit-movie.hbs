@@ -1,0 +1,35 @@
+<div>
+
+  <h2>Editar pelicula {{this.oneMovie.title}}</h2>
+
+  <form action="/movies/{{this.oneMovie._id}}/edit" method="post">
+
+    <label for="title">TITULO</label>
+    <input type="text" name="title" value="{{this.oneMovie.title}}">
+    <br>
+
+    <label for="genre">GENERO</label>
+    <input type="text" name="genre" value="{{this.oneMovie.genre}}">
+    <br>
+
+    <label for="plot">TRAMA</label>
+    <input type="text" name="plot" value="{{this.oneMovie.plot}}">
+    <br>
+
+    <label for="cast">ELENCO</label>
+    <select name="cast" multiple>
+      {{#each this.oneMovie.cast}}
+      <option value="{{this._id}}" selected disabled>{{this.name}}</option>
+      {{/each}}
+      <option disabled>---------------</option>
+      {{#each this.allCelebrities}}
+      <option value="{{this._id}}">{{this.name}}</option>
+      {{/each}}
+    </select>
+    <br>
+
+    <button>EDITAR</button>
+
+  </form>
+
+</div>

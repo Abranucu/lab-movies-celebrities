@@ -1,0 +1,28 @@
+<div>
+
+  <h2>Detalles {{this.oneMovie.title}}</h2>
+
+  <p>GENERO: {{this.oneMovie.genre}}</p>
+  <br>
+
+  <p>TRAMA: {{this.oneMovie.plot}}</p>
+  <br>
+
+  <p>ELENCO:</p>
+  {{#each this.oneMovie.cast}}
+  <p>
+    {{this.name}}, es un {{this.occupation}} y su frase mitica es:
+    <br>
+    {{this.catchPhrase}}
+  </p>
+  {{/each}}
+
+  <a href="/movies/{{this.oneMovie._id}}/edit">
+    <button>EDITAR PELICULA</button>
+  </a>
+
+  <form action="/movies/{{this.oneMovie._id}}/delete" method="post">
+    <button>BORRAR PELICULA</button>
+  </form>
+
+</div>

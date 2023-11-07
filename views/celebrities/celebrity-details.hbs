@@ -1,0 +1,19 @@
+<div>
+
+  <h2>Detalles {{this.oneCelebrity.name}}</h2>
+
+  <p>OCUPACION: {{this.oneCelebrity.occupation}}</p>
+  <br>
+
+  <p>FRASE ICONICA: {{this.oneCelebrity.catchPhrase}}</p>
+  <br>
+
+  <a href="/celebrities/{{this.oneCelebrity._id}}/edit">
+    <button>EDITAR CELEBRITY</button>
+  </a>
+
+  <form action="/celebrities/{{this.oneCelebrity._id}}/delete" method="post">
+    <button>BORRAR CELEBRITY</button>
+  </form>
+
+</div>
